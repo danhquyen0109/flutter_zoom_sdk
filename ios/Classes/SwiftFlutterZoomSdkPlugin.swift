@@ -283,8 +283,8 @@ public class ZoomView: NSObject, FlutterPlatformView, MobileRTCMeetingServiceDel
             //     params[kMeetingParam_MeetingPassword] = arguments["meetingPassword"]!!
             // }
             let joinMeetingParameters = MobileRTCMeetingJoinParam()
-            joinMeetingParameters.meetingNumber = meetingNumber
-            joinMeetingParameters.password = meetingPassword
+            joinMeetingParameters.meetingNumber = arguments["meetingId"]!!
+            joinMeetingParameters.password = arguments["meetingPassword"]!!
 
             let response = meetingService?.joinMeeting(with: joinMeetingParameters)
 
